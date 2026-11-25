@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Encabezado de SoporteRockstar -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SoporteRockstar - Soporte Técnico"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Datos del Cliente y Equipo -->
+        <EditText
+            android:id="@+id/etNombreCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Cliente"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono de Contacto"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etDispositivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Modelo del Dispositivo (ej. Samsung A54)"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Selección de Tipo de Soporte (RadioGroup) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo de Soporte Técnico:"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+
+        <RadioGroup
+            android:id="@+id/rgTipoServicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <RadioButton
+                android:id="@+id/rbHardware"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hardware (Piezas)"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rbSoftware"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Software (Sistema)" />
+        </RadioGroup>
+
+        <!-- Costos (EditText numéricos) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/etManoObra"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Mano de Obra ($)"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/etRepuestos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Repuestos ($)"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Opción Acumulativa (CheckBox) -->
+        <CheckBox
+            android:id="@+id/cbUrgente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atención Prioritaria / Urgente (+20%)"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botones de Acción con layout_weight -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Registrar Orden"
+                android:backgroundTint="#1A237E"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limpiar Campos"
+                android:backgroundTint="#607D8B"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Área de Salida de Información y Consolidado -->
+        <TextView
+            android:id="@+id/tvResumenConsolidado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:text="Resumen Soporte Técnico - SoporteRockstar:\nSin órdenes registradas aún."
+            android:textColor="#212121"
+            android:textSize="14sp"
+            android:elevation="2dp" />
+
+    </LinearLayout>
+</ScrollView>
